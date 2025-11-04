@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="kr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,9 +8,9 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="wrap">
+    <div class="main-container">
         <header>
-            <a class="brand" href="#"><span class="dot"></span><b>Japan Master</b></a>
+            <a class="logo" href="#"><b>Japan Master</b></a>
             <nav>
                 <span class="nav-btn">목록</span>
                 <span class="nav-btn">퀴즈</span>
@@ -27,10 +27,9 @@
                 <button aria-pressed="true">히라가나</button>
                 <button aria-pressed="false">가타카나</button>
             </div>
-            <form class="search" onsubmit="return false">
-                <input type="search" placeholder="검색" />
-            </form>
         </div>
+
+        <p class="help">아래 카드를 클릭하면 획 순서를 확인할 수 있습니다.</p>
 
         <!-- 히라가나 그리드 -->
         <ul class="grid hiragana">

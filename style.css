@@ -14,10 +14,17 @@ body {
     background: #faf7f2
 }
 
-.wrap {
+.main-container {
     max-width: 980px;
     margin: 0 auto;
     padding: 18px
+}
+
+.help{
+    font-size: 12px;
+    margin:3;
+    padding-left: 5px;
+    color: #6b7280
 }
 
 header {
@@ -28,7 +35,7 @@ header {
     padding: 8px 0
 }
 
-.brand {
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -36,14 +43,7 @@ header {
     color: inherit
 }
 
-.dot {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    background: #ff7aa8
-}
-
-.brand b {
+.logo b {
     font-weight: 800
 }
 
@@ -113,17 +113,6 @@ nav {
     color: #c2185b
 }
 
-.search {
-    flex: 1; /* 검색칸 끝까지 늘리기 */
-}
-
-.search input {
-    width: 100%;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    padding: 10px 12px;
-    border-radius: 10px
-}
 
 .grid {
     display: grid;
