@@ -2,69 +2,56 @@
 function initModal() {
     var modal = document.getElementById('strokeModal');
     var spriteFrames = document.querySelectorAll('.sprite-frame');
+    var cards = document.querySelectorAll('.card:not(.empty)');
+    var currentFrame = 0;
+    var maxFrames = 0;
+    var timer = null;
 
     // 카드 클릭시 모달 열기
-    var cards = document.querySelectorAll('.card:not(.empty)');
-
     for (var i = 0; i < cards.length; i++) {
         cards[i].onclick = function() {
             var roma = this.querySelector('.roma').textContent;
             var imgUrl = '/hiragana-strokes/' + roma + '.png';
 
             // 이미지 로드해서 크기 확인
-            var testImg = new Image();
-            testImg.onload = function() {
-                var frameCount = Math.round(testImg.width / 114);
+            var img = new Image();
+            img.onload = function() {
+                maxFrames = Math.round(img.width / 114);
 
-                // 모든 프레임 초기화 및 숨기기
+                // 모든 프레임 초기화
                 for (var k = 0; k < spriteFrames.length; k++) {
-                    spriteFrames[k].style.display = 'none';
-                    spriteFrames[k].style.animation = 'none';
+                    spriteFrames[k].style.backgroundImage = 'url(' + imgUrl + ')';
                     spriteFrames[k].style.opacity = '0';
                 }
 
-                // 필요한 프레임만 표시하고 이미지 설정
-                var percentage = 100 / frameCount;
-                for (var j = 0; j < frameCount; j++) {
-                    if (spriteFrames[j]) {
-                        spriteFrames[j].style.display = 'block';
-                        spriteFrames[j].style.backgroundImage = 'url(' + imgUrl + ')';
+                // 애니메이션 시작
+                currentFrame = 0;
+                if (timer) clearInterval(timer);
 
-                        // 동적 애니메이션 생성
-                        var startPercent = (percentage * j).toFixed(2);
-                        var animationName = 'showFrame' + (j + 1) + '-' + frameCount;
-
-                        // keyframe 생성 및 적용
-                        var keyframes = '@keyframes ' + animationName + ' {' +
-                            '0%, ' + (startPercent - 0.01) + '% { opacity: 0; }' +
-                            startPercent + '%, 100% { opacity: 1; }' +
-                        '}';
-
-                        // 스타일 태그에 keyframe 추가
-                        var style = document.getElementById('dynamic-keyframes');
-                        if (!style) {
-                            style = document.createElement('style');
-                            style.id = 'dynamic-keyframes';
-                            document.head.appendChild(style);
+                timer = setInterval(function() {
+                    if (currentFrame < maxFrames) {
+                        spriteFrames[currentFrame].style.opacity = '1';
+                        currentFrame++;
+                    } else {
+                        currentFrame = 0;
+                        for (var j = 0; j < maxFrames; j++) {
+                            spriteFrames[j].style.opacity = '0';
                         }
-                        style.textContent += keyframes;
-
-                        // 애니메이션 적용
-                        spriteFrames[j].style.animation = animationName + ' 2.5s infinite';
                     }
-                }
+                }, 600);
 
                 modal.classList.add('show');
             };
 
-            testImg.src = imgUrl;
+            img.src = imgUrl;
         };
     }
 
-    // 모달 배경 클릭시 닫기
+    // 모달 닫기
     modal.onclick = function(e) {
         if (e.target === modal) {
             modal.classList.remove('show');
+            if (timer) clearInterval(timer);
         }
     };
 }
