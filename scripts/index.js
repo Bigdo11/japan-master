@@ -39,6 +39,6 @@ window.onload = function() {
     initModal();
 
     hiraganaBtn.setAttribute('aria-pressed', 'true');
-    navBtn1.setAttribute('aria-pressed', 'true');
+    if (navBtn1) navBtn1.setAttribute('aria-pressed', 'true');
 };
    
