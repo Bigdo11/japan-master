@@ -4,6 +4,8 @@ window.onload = function() {
     var katakanaBtn = document.querySelectorAll('.seg button')[1];
     var navBtn1 = document.querySelectorAll('.nav-btn')[0];
     var navBtn2 = document.querySelectorAll('.nav-btn')[1];
+    var hiraganaDetail = this.document.querySelector('.hiragana-detail')
+    var katakanaDetail = this.document.querySelector('.katakana-detail')
 
     //그리드
     var hiraganaGrid = document.querySelector('.grid.hiragana');
@@ -16,6 +18,8 @@ window.onload = function() {
 
         hiraganaGrid.style.display = 'grid';
         katakanaGrid.style.display = 'none';
+         katakanaDetail.style.display = 'none';
+        hiraganaDetail.style.display = 'inline';
     };
 
     //가타카나 버튼 클릭
@@ -26,6 +30,8 @@ window.onload = function() {
 
         katakanaGrid.style.display = 'grid';
         hiraganaGrid.style.display = 'none';
+        katakanaDetail.style.display = 'inline';
+        hiraganaDetail.style.display = 'none';
     };
 
 

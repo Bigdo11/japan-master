@@ -1,194 +1,476 @@
 <!doctype html>
 <html lang="kr">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>일본어 마스터</title>
+    <link rel="icon" href="images/icon.png"/> 
     <link rel="stylesheet" href="styles/sprite.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/modal.js"></script>
     <script src="scripts/index.js"></script>
 </head>
+
 <body>
+
+    <header>
+        <a class="logo" href="#"><b>Japan Master</b></a>
+        <nav>
+            <span class="nav-btn">목록</span>
+            <span class="nav-btn">퀴즈</span>
+        </nav>
+    </header>
+    <div class="main-nav"></div>
+    <section class="head">
+        <div class="banner">
+            <img class="banner-img" src="" alt="">
+        </div>
+    </section>
+
     <div class="main-container">
-        <header>
-            <a class="logo" href="#"><b>Japan Master</b></a>
-            <nav>
-                <span class="nav-btn">목록</span>
-                <span class="nav-btn">퀴즈</span>
-            </nav>
-        </header>
-
-        <section class="head">
-            <h1>히가나나 / 가타카나</h1>
-            <p>히라가나 가타카나 열심히 공부! 퀴즈까지 풀어서 마스터 하자</p>
-        </section>
-
         <div class="seg-container">
             <div class="seg">
                 <button aria-pressed="true">히라가나</button>
                 <button aria-pressed="false">가타카나</button>
             </div>
         </div>
-
+        <p class="hiragana-detail">히라가나(平ひら仮名がな)는 현대 일본어에서 사용하는 두 가나 중 하나이다. 히라가나는 외래어를 제외한 모든 일본어를 표기할 수 있는 문자로 일본어의 기본적인 문자다. 고유 명사, 의성어, 의태어를 제외하면 대체로 히라가나가 많이 쓰인다고 보면 된다.</p>
+        <p class="katakana-detail" style="display:none">가타카나(片かた仮名かな、カタカナ)는 현대 일본어에서 사용하는 두 가나 중 하나이다. 현대 일본어에서 히라가나와 함께 널리 쓰이며 가타카나로 쓰이는 경우는 일반적으로 외래어 혹은 외국어와 연관이 많다.</p>
         <p class="help">아래 카드를 클릭하면 획 순서를 확인할 수 있습니다.</p>
 
         <!-- 히라가나 그리드 -->
         <ul class="grid hiragana">
             <!-- 아행 -->
-            <li class="card"><div class="kana">あ</div><div class="roma">a</div></li>
-            <li class="card"><div class="kana">い</div><div class="roma">i</div></li>
-            <li class="card"><div class="kana">う</div><div class="roma">u</div></li>
-            <li class="card"><div class="kana">え</div><div class="roma">e</div></li>
-            <li class="card"><div class="kana">お</div><div class="roma">o</div></li>
+            <li class="card">
+                <div class="kana">あ</div>
+                <div class="roma">a</div>
+            </li>
+            <li class="card">
+                <div class="kana">い</div>
+                <div class="roma">i</div>
+            </li>
+            <li class="card">
+                <div class="kana">う</div>
+                <div class="roma">u</div>
+            </li>
+            <li class="card">
+                <div class="kana">え</div>
+                <div class="roma">e</div>
+            </li>
+            <li class="card">
+                <div class="kana">お</div>
+                <div class="roma">o</div>
+            </li>
 
             <!-- 카행 -->
-            <li class="card"><div class="kana">か</div><div class="roma">ka</div></li>
-            <li class="card"><div class="kana">き</div><div class="roma">ki</div></li>
-            <li class="card"><div class="kana">く</div><div class="roma">ku</div></li>
-            <li class="card"><div class="kana">け</div><div class="roma">ke</div></li>
-            <li class="card"><div class="kana">こ</div><div class="roma">ko</div></li>
+            <li class="card">
+                <div class="kana">か</div>
+                <div class="roma">ka</div>
+            </li>
+            <li class="card">
+                <div class="kana">き</div>
+                <div class="roma">ki</div>
+            </li>
+            <li class="card">
+                <div class="kana">く</div>
+                <div class="roma">ku</div>
+            </li>
+            <li class="card">
+                <div class="kana">け</div>
+                <div class="roma">ke</div>
+            </li>
+            <li class="card">
+                <div class="kana">こ</div>
+                <div class="roma">ko</div>
+            </li>
 
             <!-- 사행 -->
-            <li class="card"><div class="kana">さ</div><div class="roma">sa</div></li>
-            <li class="card"><div class="kana">し</div><div class="roma">shi</div></li>
-            <li class="card"><div class="kana">す</div><div class="roma">su</div></li>
-            <li class="card"><div class="kana">せ</div><div class="roma">se</div></li>
-            <li class="card"><div class="kana">そ</div><div class="roma">so</div></li>
+            <li class="card">
+                <div class="kana">さ</div>
+                <div class="roma">sa</div>
+            </li>
+            <li class="card">
+                <div class="kana">し</div>
+                <div class="roma">shi</div>
+            </li>
+            <li class="card">
+                <div class="kana">す</div>
+                <div class="roma">su</div>
+            </li>
+            <li class="card">
+                <div class="kana">せ</div>
+                <div class="roma">se</div>
+            </li>
+            <li class="card">
+                <div class="kana">そ</div>
+                <div class="roma">so</div>
+            </li>
 
             <!-- 타행 -->
-            <li class="card"><div class="kana">た</div><div class="roma">ta</div></li>
-            <li class="card"><div class="kana">ち</div><div class="roma">chi</div></li>
-            <li class="card"><div class="kana">つ</div><div class="roma">tsu</div></li>
-            <li class="card"><div class="kana">て</div><div class="roma">te</div></li>
-            <li class="card"><div class="kana">と</div><div class="roma">to</div></li>
+            <li class="card">
+                <div class="kana">た</div>
+                <div class="roma">ta</div>
+            </li>
+            <li class="card">
+                <div class="kana">ち</div>
+                <div class="roma">chi</div>
+            </li>
+            <li class="card">
+                <div class="kana">つ</div>
+                <div class="roma">tsu</div>
+            </li>
+            <li class="card">
+                <div class="kana">て</div>
+                <div class="roma">te</div>
+            </li>
+            <li class="card">
+                <div class="kana">と</div>
+                <div class="roma">to</div>
+            </li>
 
             <!-- 나행 -->
-            <li class="card"><div class="kana">な</div><div class="roma">na</div></li>
-            <li class="card"><div class="kana">に</div><div class="roma">ni</div></li>
-            <li class="card"><div class="kana">ぬ</div><div class="roma">nu</div></li>
-            <li class="card"><div class="kana">ね</div><div class="roma">ne</div></li>
-            <li class="card"><div class="kana">の</div><div class="roma">no</div></li>
+            <li class="card">
+                <div class="kana">な</div>
+                <div class="roma">na</div>
+            </li>
+            <li class="card">
+                <div class="kana">に</div>
+                <div class="roma">ni</div>
+            </li>
+            <li class="card">
+                <div class="kana">ぬ</div>
+                <div class="roma">nu</div>
+            </li>
+            <li class="card">
+                <div class="kana">ね</div>
+                <div class="roma">ne</div>
+            </li>
+            <li class="card">
+                <div class="kana">の</div>
+                <div class="roma">no</div>
+            </li>
 
             <!-- 하행 -->
-            <li class="card"><div class="kana">は</div><div class="roma">ha</div></li>
-            <li class="card"><div class="kana">ひ</div><div class="roma">hi</div></li>
-            <li class="card"><div class="kana">ふ</div><div class="roma">fu</div></li>
-            <li class="card"><div class="kana">へ</div><div class="roma">he</div></li>
-            <li class="card"><div class="kana">ほ</div><div class="roma">ho</div></li>
+            <li class="card">
+                <div class="kana">は</div>
+                <div class="roma">ha</div>
+            </li>
+            <li class="card">
+                <div class="kana">ひ</div>
+                <div class="roma">hi</div>
+            </li>
+            <li class="card">
+                <div class="kana">ふ</div>
+                <div class="roma">fu</div>
+            </li>
+            <li class="card">
+                <div class="kana">へ</div>
+                <div class="roma">he</div>
+            </li>
+            <li class="card">
+                <div class="kana">ほ</div>
+                <div class="roma">ho</div>
+            </li>
 
             <!-- 마행 -->
-            <li class="card"><div class="kana">ま</div><div class="roma">ma</div></li>
-            <li class="card"><div class="kana">み</div><div class="roma">mi</div></li>
-            <li class="card"><div class="kana">む</div><div class="roma">mu</div></li>
-            <li class="card"><div class="kana">め</div><div class="roma">me</div></li>
-            <li class="card"><div class="kana">も</div><div class="roma">mo</div></li>
+            <li class="card">
+                <div class="kana">ま</div>
+                <div class="roma">ma</div>
+            </li>
+            <li class="card">
+                <div class="kana">み</div>
+                <div class="roma">mi</div>
+            </li>
+            <li class="card">
+                <div class="kana">む</div>
+                <div class="roma">mu</div>
+            </li>
+            <li class="card">
+                <div class="kana">め</div>
+                <div class="roma">me</div>
+            </li>
+            <li class="card">
+                <div class="kana">も</div>
+                <div class="roma">mo</div>
+            </li>
 
             <!-- 야행 -->
-            <li class="card"><div class="kana">や</div><div class="roma">ya</div></li>
+            <li class="card">
+                <div class="kana">や</div>
+                <div class="roma">ya</div>
+            </li>
             <li class="card empty"></li>
-            <li class="card"><div class="kana">ゆ</div><div class="roma">yu</div></li>
+            <li class="card">
+                <div class="kana">ゆ</div>
+                <div class="roma">yu</div>
+            </li>
             <li class="card empty"></li>
-            <li class="card"><div class="kana">よ</div><div class="roma">yo</div></li>
+            <li class="card">
+                <div class="kana">よ</div>
+                <div class="roma">yo</div>
+            </li>
 
             <!-- 라행 -->
-            <li class="card"><div class="kana">ら</div><div class="roma">ra</div></li>
-            <li class="card"><div class="kana">り</div><div class="roma">ri</div></li>
-            <li class="card"><div class="kana">る</div><div class="roma">ru</div></li>
-            <li class="card"><div class="kana">れ</div><div class="roma">re</div></li>
-            <li class="card"><div class="kana">ろ</div><div class="roma">ro</div></li>
+            <li class="card">
+                <div class="kana">ら</div>
+                <div class="roma">ra</div>
+            </li>
+            <li class="card">
+                <div class="kana">り</div>
+                <div class="roma">ri</div>
+            </li>
+            <li class="card">
+                <div class="kana">る</div>
+                <div class="roma">ru</div>
+            </li>
+            <li class="card">
+                <div class="kana">れ</div>
+                <div class="roma">re</div>
+            </li>
+            <li class="card">
+                <div class="kana">ろ</div>
+                <div class="roma">ro</div>
+            </li>
 
             <!-- 와행 -->
-            <li class="card"><div class="kana">わ</div><div class="roma">wa</div></li>
+            <li class="card">
+                <div class="kana">わ</div>
+                <div class="roma">wa</div>
+            </li>
             <li class="card empty"></li>
             <li class="card empty"></li>
             <li class="card empty"></li>
-            <li class="card"><div class="kana">を</div><div class="roma">wo</div></li>
+            <li class="card">
+                <div class="kana">を</div>
+                <div class="roma">wo</div>
+            </li>
 
             <!-- ㄴ -->
-            <li class="card"><div class="kana">ん</div><div class="roma">n</div></li>
+            <li class="card">
+                <div class="kana">ん</div>
+                <div class="roma">n</div>
+            </li>
         </ul>
 
         <!-- 카타카나 그리드 -->
         <ul class="grid katakana" style="display:none">
             <!-- 아행 -->
-            <li class="card"><div class="kana">ア</div><div class="roma">a</div></li>
-            <li class="card"><div class="kana">イ</div><div class="roma">i</div></li>
-            <li class="card"><div class="kana">ウ</div><div class="roma">u</div></li>
-            <li class="card"><div class="kana">エ</div><div class="roma">e</div></li>
-            <li class="card"><div class="kana">オ</div><div class="roma">o</div></li>
+            <li class="card">
+                <div class="kana">ア</div>
+                <div class="roma">a</div>
+            </li>
+            <li class="card">
+                <div class="kana">イ</div>
+                <div class="roma">i</div>
+            </li>
+            <li class="card">
+                <div class="kana">ウ</div>
+                <div class="roma">u</div>
+            </li>
+            <li class="card">
+                <div class="kana">エ</div>
+                <div class="roma">e</div>
+            </li>
+            <li class="card">
+                <div class="kana">オ</div>
+                <div class="roma">o</div>
+            </li>
 
             <!-- 카행 -->
-            <li class="card"><div class="kana">カ</div><div class="roma">ka</div></li>
-            <li class="card"><div class="kana">キ</div><div class="roma">ki</div></li>
-            <li class="card"><div class="kana">ク</div><div class="roma">ku</div></li>
-            <li class="card"><div class="kana">ケ</div><div class="roma">ke</div></li>
-            <li class="card"><div class="kana">コ</div><div class="roma">ko</div></li>
+            <li class="card">
+                <div class="kana">カ</div>
+                <div class="roma">ka</div>
+            </li>
+            <li class="card">
+                <div class="kana">キ</div>
+                <div class="roma">ki</div>
+            </li>
+            <li class="card">
+                <div class="kana">ク</div>
+                <div class="roma">ku</div>
+            </li>
+            <li class="card">
+                <div class="kana">ケ</div>
+                <div class="roma">ke</div>
+            </li>
+            <li class="card">
+                <div class="kana">コ</div>
+                <div class="roma">ko</div>
+            </li>
 
             <!-- 사행 -->
-            <li class="card"><div class="kana">サ</div><div class="roma">sa</div></li>
-            <li class="card"><div class="kana">シ</div><div class="roma">shi</div></li>
-            <li class="card"><div class="kana">ス</div><div class="roma">su</div></li>
-            <li class="card"><div class="kana">セ</div><div class="roma">se</div></li>
-            <li class="card"><div class="kana">ソ</div><div class="roma">so</div></li>
+            <li class="card">
+                <div class="kana">サ</div>
+                <div class="roma">sa</div>
+            </li>
+            <li class="card">
+                <div class="kana">シ</div>
+                <div class="roma">shi</div>
+            </li>
+            <li class="card">
+                <div class="kana">ス</div>
+                <div class="roma">su</div>
+            </li>
+            <li class="card">
+                <div class="kana">セ</div>
+                <div class="roma">se</div>
+            </li>
+            <li class="card">
+                <div class="kana">ソ</div>
+                <div class="roma">so</div>
+            </li>
 
             <!-- 타행 -->
-            <li class="card"><div class="kana">タ</div><div class="roma">ta</div></li>
-            <li class="card"><div class="kana">チ</div><div class="roma">chi</div></li>
-            <li class="card"><div class="kana">ツ</div><div class="roma">tsu</div></li>
-            <li class="card"><div class="kana">テ</div><div class="roma">te</div></li>
-            <li class="card"><div class="kana">ト</div><div class="roma">to</div></li>
+            <li class="card">
+                <div class="kana">タ</div>
+                <div class="roma">ta</div>
+            </li>
+            <li class="card">
+                <div class="kana">チ</div>
+                <div class="roma">chi</div>
+            </li>
+            <li class="card">
+                <div class="kana">ツ</div>
+                <div class="roma">tsu</div>
+            </li>
+            <li class="card">
+                <div class="kana">テ</div>
+                <div class="roma">te</div>
+            </li>
+            <li class="card">
+                <div class="kana">ト</div>
+                <div class="roma">to</div>
+            </li>
 
             <!-- 나행 -->
-            <li class="card"><div class="kana">ナ</div><div class="roma">na</div></li>
-            <li class="card"><div class="kana">ニ</div><div class="roma">ni</div></li>
-            <li class="card"><div class="kana">ヌ</div><div class="roma">nu</div></li>
-            <li class="card"><div class="kana">ネ</div><div class="roma">ne</div></li>
-            <li class="card"><div class="kana">ノ</div><div class="roma">no</div></li>
+            <li class="card">
+                <div class="kana">ナ</div>
+                <div class="roma">na</div>
+            </li>
+            <li class="card">
+                <div class="kana">ニ</div>
+                <div class="roma">ni</div>
+            </li>
+            <li class="card">
+                <div class="kana">ヌ</div>
+                <div class="roma">nu</div>
+            </li>
+            <li class="card">
+                <div class="kana">ネ</div>
+                <div class="roma">ne</div>
+            </li>
+            <li class="card">
+                <div class="kana">ノ</div>
+                <div class="roma">no</div>
+            </li>
 
             <!-- 하행 -->
-            <li class="card"><div class="kana">ハ</div><div class="roma">ha</div></li>
-            <li class="card"><div class="kana">ヒ</div><div class="roma">hi</div></li>
-            <li class="card"><div class="kana">フ</div><div class="roma">fu</div></li>
-            <li class="card"><div class="kana">ヘ</div><div class="roma">he</div></li>
-            <li class="card"><div class="kana">ホ</div><div class="roma">ho</div></li>
+            <li class="card">
+                <div class="kana">ハ</div>
+                <div class="roma">ha</div>
+            </li>
+            <li class="card">
+                <div class="kana">ヒ</div>
+                <div class="roma">hi</div>
+            </li>
+            <li class="card">
+                <div class="kana">フ</div>
+                <div class="roma">fu</div>
+            </li>
+            <li class="card">
+                <div class="kana">ヘ</div>
+                <div class="roma">he</div>
+            </li>
+            <li class="card">
+                <div class="kana">ホ</div>
+                <div class="roma">ho</div>
+            </li>
 
             <!-- 마행 -->
-            <li class="card"><div class="kana">マ</div><div class="roma">ma</div></li>
-            <li class="card"><div class="kana">ミ</div><div class="roma">mi</div></li>
-            <li class="card"><div class="kana">ム</div><div class="roma">mu</div></li>
-            <li class="card"><div class="kana">メ</div><div class="roma">me</div></li>
-            <li class="card"><div class="kana">モ</div><div class="roma">mo</div></li>
+            <li class="card">
+                <div class="kana">マ</div>
+                <div class="roma">ma</div>
+            </li>
+            <li class="card">
+                <div class="kana">ミ</div>
+                <div class="roma">mi</div>
+            </li>
+            <li class="card">
+                <div class="kana">ム</div>
+                <div class="roma">mu</div>
+            </li>
+            <li class="card">
+                <div class="kana">メ</div>
+                <div class="roma">me</div>
+            </li>
+            <li class="card">
+                <div class="kana">モ</div>
+                <div class="roma">mo</div>
+            </li>
 
             <!-- 야행 -->
-            <li class="card"><div class="kana">ヤ</div><div class="roma">ya</div></li>
+            <li class="card">
+                <div class="kana">ヤ</div>
+                <div class="roma">ya</div>
+            </li>
             <li class="card empty"></li>
-            <li class="card"><div class="kana">ユ</div><div class="roma">yu</div></li>
+            <li class="card">
+                <div class="kana">ユ</div>
+                <div class="roma">yu</div>
+            </li>
             <li class="card empty"></li>
-            <li class="card"><div class="kana">ヨ</div><div class="roma">yo</div></li>
+            <li class="card">
+                <div class="kana">ヨ</div>
+                <div class="roma">yo</div>
+            </li>
 
             <!-- 라행 -->
-            <li class="card"><div class="kana">ラ</div><div class="roma">ra</div></li>
-            <li class="card"><div class="kana">リ</div><div class="roma">ri</div></li>
-            <li class="card"><div class="kana">ル</div><div class="roma">ru</div></li>
-            <li class="card"><div class="kana">レ</div><div class="roma">re</div></li>
-            <li class="card"><div class="kana">ロ</div><div class="roma">ro</div></li>
+            <li class="card">
+                <div class="kana">ラ</div>
+                <div class="roma">ra</div>
+            </li>
+            <li class="card">
+                <div class="kana">リ</div>
+                <div class="roma">ri</div>
+            </li>
+            <li class="card">
+                <div class="kana">ル</div>
+                <div class="roma">ru</div>
+            </li>
+            <li class="card">
+                <div class="kana">レ</div>
+                <div class="roma">re</div>
+            </li>
+            <li class="card">
+                <div class="kana">ロ</div>
+                <div class="roma">ro</div>
+            </li>
 
             <!-- 와행 -->
-            <li class="card"><div class="kana">ワ</div><div class="roma">wa</div></li>
+            <li class="card">
+                <div class="kana">ワ</div>
+                <div class="roma">wa</div>
+            </li>
             <li class="card empty"></li>
             <li class="card empty"></li>
             <li class="card empty"></li>
-            <li class="card"><div class="kana">ヲ</div><div class="roma">wo</div></li>
+            <li class="card">
+                <div class="kana">ヲ</div>
+                <div class="roma">wo</div>
+            </li>
 
             <!-- ㄴ -->
-            <li class="card"><div class="kana">ン</div><div class="roma">n</div></li>
+            <li class="card">
+                <div class="kana">ン</div>
+                <div class="roma">n</div>
+            </li>
         </ul>
 
         <footer>20210007 김도현</footer>
     </div>
 
-    
+
     <div class="modal" id="strokeModal">
         <div class="modal-content">
             <div class="stroke-container">
@@ -202,4 +484,5 @@
         </div>
     </div>
 </body>
+
 </html>

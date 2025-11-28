@@ -10,8 +10,11 @@ function initModal() {
     // 카드 클릭시 모달 열기
     for (var i = 0; i < cards.length; i++) {
         cards[i].onclick = function() {
+            var hiraganaGrid = document.querySelector('.grid.hiragana');
+            var isHiragana = hiraganaGrid.style.display !== 'none';
+            var charType = isHiragana ? 'hiragana-strokes' : 'katakana-strokes';
             var roma = this.querySelector('.roma').textContent;
-            var imgUrl = '/hiragana-strokes/' + roma + '.png';
+            var imgUrl = charType + '/' + roma + '.png';
 
             // 이미지 로드해서 크기 확인
             var img = new Image();
