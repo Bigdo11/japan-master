@@ -511,7 +511,10 @@
                 <p>문제 <span id="currentQuestion">1</span> / 5</p>
                 <div id="quizCharacter">あ</div>
                 <p>이 문자의 발음은?</p>
-                <div id="quizOptions"></div>
+                <div class="quiz-input-container">
+                    <input type="text" id="answerInput" placeholder="예: 아" autocomplete="off">
+                    <button id="submitBtn" class="quiz-submit-btn" onclick="checkAnswer()">제출</button>
+                </div>
                 <div id="quizFeedback" style="display:none">
                     <p id="feedbackText"></p>
                 </div>

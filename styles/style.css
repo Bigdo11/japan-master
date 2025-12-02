@@ -481,3 +481,59 @@ footer {
 .quiz-close-btn:hover {
     background: #ff5a8f;
 }
+
+/* 퀴즈 입력 방식 스타일 */
+.quiz-input-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-direction: column;
+}
+
+#answerInput {
+    flex: 1;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: border-color 0.3s;
+}
+
+#answerInput:focus {
+    outline: none;
+    border-color: #ff6b9d;
+}
+
+#answerInput:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.quiz-submit-btn {
+    padding: 15px 30px;
+    background: #ff6b9d;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.quiz-submit-btn:hover:not(:disabled) {
+    background: #ff5a8f;
+}
+
+.quiz-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#quizCharacter {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 20px 0;
+}

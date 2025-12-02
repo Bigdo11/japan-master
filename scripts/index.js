@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     // 버튼
     var hiraganaBtn = document.querySelectorAll('.seg button')[0];
     var katakanaBtn = document.querySelectorAll('.seg button')[1];
@@ -12,18 +12,18 @@ window.onload = function() {
     var katakanaGrid = document.querySelector('.grid.katakana');
 
     // 히라가나 버튼 클릭
-    hiraganaBtn.onclick = function() {
+    hiraganaBtn.onclick = function () {
         hiraganaBtn.setAttribute('aria-pressed', 'true');
         katakanaBtn.removeAttribute('aria-pressed');
 
         hiraganaGrid.style.display = 'grid';
         katakanaGrid.style.display = 'none';
-         katakanaDetail.style.display = 'none';
+        katakanaDetail.style.display = 'none';
         hiraganaDetail.style.display = 'inline';
     };
 
     //가타카나 버튼 클릭
-    katakanaBtn.onclick = function() {
+    katakanaBtn.onclick = function () {
 
         katakanaBtn.setAttribute('aria-pressed', 'true');
         hiraganaBtn.removeAttribute('aria-pressed');
@@ -41,4 +41,3 @@ window.onload = function() {
     hiraganaBtn.setAttribute('aria-pressed', 'true');
     if (navBtn1) navBtn1.setAttribute('aria-pressed', 'true');
 };
-   

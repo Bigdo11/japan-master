@@ -91,74 +91,60 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('closeQuizBtn').onclick = function() {
         document.getElementById('quizModal').classList.remove('show');
     };
+
+    // Enter 키로 제출
+    document.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            var quizPlay = document.getElementById('quizPlay');
+            if (quizPlay.style.display !== 'none') {
+                checkAnswer();
+            }
+        }
+    });
 });
 
 function showQuestion() {
     var q = questions[current];
-    var data = type === 'hiragana' ? hiragana : katakana;
 
     document.getElementById('quizCharacter').textContent = q.kana;
     document.getElementById('currentQuestion').textContent = current + 1;
 
-    // 오답 
-    var wrong = [];
-    while (wrong.length < 3) {
-        var rand = Math.floor(Math.random() * data.length);
-        var r = data[rand].roma;
-        if (r !== q.roma && wrong.indexOf(r) === -1) {
-            wrong.push(r);
-        }
-    }
-
-    // 섞기
-    var options = [q.roma].concat(wrong);
-    for (var i = options.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = options[i];
-        options[i] = options[j];
-        options[j] = temp;
-    }
-
-    // 버튼 만들기
-    var container = document.getElementById('quizOptions');
-    container.innerHTML = '';
-    for (var i = 0; i < options.length; i++) {
-        var btn = document.createElement('button');
-        btn.className = 'quiz-answer-btn';
-        btn.textContent = options[i];
-        btn.onclick = (function(opt) {
-            return function() {
-                checkAnswer(opt);
-            };
-        })(options[i]);
-        container.appendChild(btn);
-    }
+    // 입력창 초기화
+    var input = document.getElementById('answerInput');
+    input.value = '';
+    input.disabled = false;
+    input.focus();
 
     document.getElementById('quizFeedback').style.display = 'none';
+    document.getElementById('submitBtn').disabled = false;
 }
 
-function checkAnswer(answer) {
+function checkAnswer() {
+    var userAnswer = document.getElementById('answerInput').value.trim();
     var correct = questions[current].roma;
-    var buttons = document.querySelectorAll('.quiz-answer-btn');
 
-    if (answer === correct) {
+    // 입력이 비어있으면 체크 안 함
+    if (!userAnswer) {
+        return;
+    }
+
+    // 정답 체크
+    var isCorrect = userAnswer === correct;
+    if (isCorrect) {
         score++;
     }
 
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].disabled = true;
-        if (buttons[i].textContent === correct) {
-            buttons[i].className = 'quiz-answer-btn correct';
-        } else if (buttons[i].textContent === answer && answer !== correct) {
-            buttons[i].className = 'quiz-answer-btn incorrect';
-        }
-    }
+    // 입력창과 제출 버튼 비활성화
+    document.getElementById('answerInput').disabled = true;
+    document.getElementById('submitBtn').disabled = true;
 
+    // 피드백 표시
     var feedback = document.getElementById('quizFeedback');
     feedback.style.display = 'block';
-    feedback.className = answer === correct ? 'quiz-feedback correct' : 'quiz-feedback incorrect';
-    document.getElementById('feedbackText').textContent = answer === correct ? '정답!' : '오답! 정답: ' + correct;
+    feedback.className = isCorrect ? 'quiz-feedback correct' : 'quiz-feedback incorrect';
+    document.getElementById('feedbackText').textContent = isCorrect ? '정답!' : '오답! 정답: ' + correct;
 
+    // 1초 후 다음 문제
     setTimeout(function() {
         current++;
         if (current < 5) {
